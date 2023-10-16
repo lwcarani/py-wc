@@ -18,7 +18,9 @@ So now, when I type `wc` in the command prompt, this batch file will execute, wh
 
 ## Examples
 
-`pywc` allows you to execute typical Linux-style `wc` commands. Line count for a single file:
+`pywc` allows you to execute typical Linux-style `wc` commands.
+
+Here we see the line count for a single file:
 
 ```console
 C:\> wc test.txt -l
