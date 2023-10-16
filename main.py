@@ -10,7 +10,7 @@ from typing import (
 def is_ignored(
     file_path: str,
     ext_or_dir_to_ignore: List[str]
-    ) -> bool:
+) -> bool:
     """Check if the file matches any of the ignored extensions or directories"""
     return (
         any(file_path.endswith(ext) for ext in ext_or_dir_to_ignore) 
