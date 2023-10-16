@@ -61,6 +61,7 @@ C:\> wc test.txt -w -l
   7145  58164   test.txt
   7145  58164   total
   lines words
+  
 C:\> wc test.txt -w -l -c -m
   7145  58164   339289  342185  test.txt
   7145  58164   339289  342185  total
