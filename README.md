@@ -123,7 +123,7 @@ C:\> wc test_text test_text2 -i .py
   lines words   bytes
 ```
 
-And you can even specify directory names to ignore! First we call `wc` on a python project, ithout ignoring any file extensions or directories:
+And you can even specify directory names to ignore! First we call `wc` on a python project, without ignoring any file extensions or directories:
 
 ```console
 C:\> wc matching-algorithms -l
@@ -285,11 +285,10 @@ C:\> wc matching-algorithms -l
   lines
 ```
 
-Yikes. Now, let's call `wc` on the same directory, but ignore any compiled python bytecode files (.pyc) and any .git directories:
+Yikes. Now, let's call `wc` on the same directory, but ignore any compiled python bytecode files (.pyc), .gitignore files, and any .git directories:
 
 ```console
-C:\> wc matching-algorithms -l -i .pyc .git
-  6     matching-algorithms\.gitignore
+C:\> wc matching-algorithms -l -i .pyc .gitignore .git
   22    matching-algorithms\README.md
   21    matching-algorithms\python\data_generator.py
   44    matching-algorithms\python\graph.py
@@ -301,7 +300,7 @@ C:\> wc matching-algorithms -l -i .pyc .git
   61    matching-algorithms\python\algos\top_trading_cycle.py
   80    matching-algorithms\python\algos\ttc_utils.py
   1     matching-algorithms\python\algos\__init__.py
-  876   total
+  870   total
   lines
 ```
 
