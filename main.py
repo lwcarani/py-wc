@@ -100,10 +100,15 @@ if __name__ == '__main__':
     # Create an ArgumentParser object
     parser = argparse.ArgumentParser(description='Process text file(s).')
 
-    # Add arguments for one or more input files
-    parser.add_argument('input_files', nargs='+', type=str, help='Path to the input file(s). Pass no options with input file to compute -l (line count), -w (word count), and -c (byte count)')
+    # Add arguments for input file(s) and/or dir(s)
+    parser.add_argument(
+        'input_files_or_dirs', 
+        nargs='+', 
+        type=str, 
+        help='Path to the input file(s) and/or dir(s). Pass no options with input file to compute -l (line count), -w (word count), and -c (byte count)'
+    )
 
-    # Add flags for different options
+    # Add flags for different options, store as True/False
     parser.add_argument('-c', '--bytes', action='store_true', help='Count bytes')
     parser.add_argument('-l', '--lines', action='store_true', help='Count lines')
     parser.add_argument('-w', '--words', action='store_true', help='Count words')
@@ -126,7 +131,7 @@ if __name__ == '__main__':
     total = np.zeros(init_arr_size)
 
     # compute stats for all file(s) / dir(s) passed as input
-    for file_or_directory in args.input_files:
+    for file_or_directory in args.input_files_or_dirs:
         # if input is a file, process directly
         if os.path.isfile(file_or_directory):
             if not is_ignored(
