@@ -11,4 +11,4 @@ For Windows, Set up C:/Aliases folder, create batch file, add to PATH...
 Can pass in any number of files or directories. Can also pass file extensions or directories to ignore. 
 
 ## Acknowledgements
-Thanks to ... for the idea! 
+Thanks to [John Crickett](https://github.com/JohnCrickett) for the idea from his site, [Coding Challenges](https://codingchallenges.fyi/challenges/challenge-wc)! 
