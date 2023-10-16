@@ -8,6 +8,14 @@ This version is written in python.
 ## Instructions
 For Windows, Set up C:/Aliases folder, create batch file, add to PATH...
 
+```console
+C:\> wc test.txt
+
+  7145  58164   342185  test.txt
+  7145  58164   342185  total
+  lines words   bytes
+```
+
 Can pass in any number of files or directories. Can also pass file extensions or directories to ignore. 
 
 ## Acknowledgements
