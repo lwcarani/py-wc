@@ -1,9 +1,9 @@
 # pywc
 
 ## About
-wc stands for word count. pywc is my version of the Linux style command line tool named wc. As the name implies, its only use is for counting the number of lines, words, bytes, or characters in the files or directories specified in the input arguments. 
+`wc` stands for word count. `pywc` is my version of the Linux-style command line tool named `wc`. As the name implies, its only use is for counting the number of lines, words, bytes, or characters in the files or directories specified in the input arguments. 
 
-This version is written in python. 
+This version is written in Python. 
 
 ## Instructions
 For Windows, create a folder named `Aliases` in your C drive: `C:/Aliases`. Add this folder to PATH. Next, create a batch file that will execute when you call the specified alias. For example, on my machine, I have a batch file named `wc.bat` located at `C:/Aliases`, that contains the following script:
