@@ -70,7 +70,21 @@ C:\> wc test.txt -w -l -c -m
   lines words   chars   bytes
 ```
 
-And if you don't pass any flags, you get lines, words, and bytes by default:
+And the order in which you pass the flags does not matter:
+
+```console
+C:\> wc -w -l test.txt
+  7145  58164   test.txt
+  7145  58164   total
+  lines words
+
+C:\> wc -w -l -c -m test.txt 
+  7145  58164   339289  342185  test.txt
+  7145  58164   339289  342185  total
+  lines words   chars   bytes
+```
+
+If you don't pass any flags, you get lines, words, and bytes by default:
 
 ```console
 C:\> wc test.txt
