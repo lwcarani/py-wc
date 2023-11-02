@@ -1,7 +1,7 @@
 # pywc
 
 ## About
-`wc` stands for word count. `pywc` is my version of the Linux-style command line tool named `wc`. As the name implies, its only use is for counting the number of lines, words, bytes, or characters in the files or directories specified in the input arguments. 
+`wc` stands for word count. `pywc` is my version of the Linux-style command line tool named `wc`, implemented in Python (hence the 'py' in `pywc`). As the name implies, its only use is for counting the number of lines, words, bytes, or characters in the files or directories specified in the input arguments. 
 
 This version is written in Python. 
 
@@ -18,7 +18,9 @@ So now, when I type `wc` in the command prompt, this batch file will execute, wh
 
 ## Examples
 
-`pywc` allows you to execute typical Linux-style `wc` commands. Line count for a single file:
+`pywc` allows you to execute typical Linux-style `wc` commands.
+
+Here we see the line count for a single file:
 
 ```cmd
 C:\> wc test.txt -l
@@ -68,7 +70,21 @@ C:\> wc test.txt -w -l -c -m
   lines words   chars   bytes
 ```
 
-And if you don't pass any flags, you get lines, words, and bytes by default:
+And the order in which you pass the flags does not matter:
+
+```cmd
+C:\> wc -w -l test.txt
+  7145  58164   test.txt
+  7145  58164   total
+  lines words
+
+C:\> wc -w -l -c -m test.txt 
+  7145  58164   339289  342185  test.txt
+  7145  58164   339289  342185  total
+  lines words   chars   bytes
+```
+
+If you don't pass any flags, you get lines, words, and bytes by default:
 
 ```cmd
 C:\> wc test.txt
