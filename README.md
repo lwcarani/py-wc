@@ -325,4 +325,6 @@ Much better!
 ## Acknowledgements
 Thanks to [John Crickett](https://github.com/JohnCrickett) for the idea from his site, [Coding Challenges](https://codingchallenges.fyi/challenges/challenge-wc)!
 
+Text samples were downloaded from [this](https://www.gutenberg.org/cache/epub/132/pg132.txt) site.
+
 Feedback, bug reports, issues, and pull requests welcome!
