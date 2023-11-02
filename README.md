@@ -20,7 +20,7 @@ So now, when I type `wc` in the command prompt, this batch file will execute, wh
 
 `pywc` allows you to execute typical Linux-style `wc` commands. Line count for a single file:
 
-```console
+```cmd
 C:\> wc test.txt -l
   7145  test.txt
   7145  total
@@ -29,7 +29,7 @@ C:\> wc test.txt -l
 
 Byte count:
 
-```console
+```cmd
 C:\> wc test.txt -c
   342185        test.txt
   342185        total
@@ -38,7 +38,7 @@ C:\> wc test.txt -c
 
 Character count:
 
-```console
+```cmd
 C:\> wc test.txt -m
   339289        test.txt
   339289        total
@@ -47,7 +47,7 @@ C:\> wc test.txt -m
 
 And word count:
 
-```console
+```cmd
 C:\> wc test.txt -w
   58164 test.txt
   58164 total
@@ -56,7 +56,7 @@ C:\> wc test.txt -w
 
 You can also mix and match flags:
 
-```console
+```cmd
 C:\> wc test.txt -w -l
   7145  58164   test.txt
   7145  58164   total
@@ -70,7 +70,7 @@ C:\> wc test.txt -w -l -c -m
 
 And if you don't pass any flags, you get lines, words, and bytes by default:
 
-```console
+```cmd
 C:\> wc test.txt
   7145  58164   342185  test.txt
   7145  58164   342185  total
@@ -79,7 +79,7 @@ C:\> wc test.txt
 
 You can also pass in more than one file:
 
-```console
+```cmd
 C:\> wc test.txt test2.txt
   7145  58164   342185  test.txt
   26    136     814     test2.txt
@@ -89,7 +89,7 @@ C:\> wc test.txt test2.txt
 
 Or, you can pass in a directory:
 
-```console
+```cmd
 C:\> wc test_text
   7145  58164   342185  test_text\test.txt
   26    136     814     test_text\test2.txt
@@ -99,7 +99,7 @@ C:\> wc test_text
 
 Or multiple directories:
 
-```console
+```cmd
 C:\> wc test_text test_text2
   44    121     1453    test_text\graph.py
   21    47      568     test_text\node.py
@@ -113,7 +113,7 @@ C:\> wc test_text test_text2
 
 Finally, you can specify file extensions to ignore:
 
-```console
+```cmd
 C:\> wc test_text test_text2 -i .py
   7145  58164   342185  test_text\test.txt
   26    136     814     test_text\test2.txt
@@ -125,7 +125,7 @@ C:\> wc test_text test_text2 -i .py
 
 And you can even specify directory names to ignore! First we call `wc` on a python project, without ignoring any file extensions or directories:
 
-```console
+```cmd
 C:\> wc matching-algorithms -l
   6     matching-algorithms\.gitignore
   22    matching-algorithms\README.md
@@ -287,7 +287,7 @@ C:\> wc matching-algorithms -l
 
 Yikes. Now, let's call `wc` on the same directory, but ignore any compiled python bytecode files (.pyc), .gitignore files, and any .git directories:
 
-```console
+```cmd
 C:\> wc matching-algorithms -l -i .pyc .gitignore .git
   22    matching-algorithms\README.md
   21    matching-algorithms\python\data_generator.py
