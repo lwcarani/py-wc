@@ -1,7 +1,7 @@
-# pywc
+# py-wc
 
 ## About
-`wc` stands for word count. `pywc` is my version of the Linux-style command line tool named `wc`, implemented in Python (hence the 'py' in `pywc`). As the name implies, its only use is for counting the number of lines, words, bytes, or characters in the files or directories specified in the input arguments. 
+`wc` stands for word count. `py-wc` is my version of the Linux-style command line tool named `wc`, implemented in Python (hence the 'py' in `py-wc`). As the name implies, its only use is for counting the number of lines, words, bytes, or characters in the files or directories specified in the input arguments. 
 
 This version is written in Python. 
 
@@ -11,14 +11,14 @@ For Windows, create a folder named `Aliases` in your C drive: `C:/Aliases`. Add 
 ```bat
 @echo off
 echo.
-python C:\...\GitHub\pywc\main.py %*
+python C:\...\GitHub\py-wc\main.py %*
 ```
 
-So now, when I type `wc` in the command prompt, this batch file will execute, which in turn, runs the `pywc` Python script. 
+So now, when I type `wc` in the command prompt, this batch file will execute, which in turn, runs the `py-wc` Python script. 
 
 ## Examples
 
-`pywc` allows you to execute typical Linux-style `wc` commands.
+`py-wc` allows you to execute typical Linux-style `wc` commands.
 
 Here we see the line count for a single file:
 
