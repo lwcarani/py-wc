@@ -22,7 +22,7 @@ def count_data(
     file_name: str, 
     args: argparse.Namespace,
     optional_flags: int
-) -> Tuple:
+) -> Tuple[int]:
     """Generate stats for a single file"""
     res = ()  # init empty tuple for result
     data = file.read()
