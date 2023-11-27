@@ -30,6 +30,9 @@ class TestPyHead(TestCase):
             ['test.txt', ['.git'], False],
             ['test.txt', ['.txt'], True],
             ['test.csv', ['.csv'], True],
+            ['test.jpeg', ['.csv', '.xlsx', '.git', '.pdf'], False],
+            ['test.xlsm', ['.csv', '.xlsx', '.git', '.pdf', '.xlsm'], True],
+            ['test.jpeg', ['.csv', '.xlsx', '.git', '.pdf', 'jpeg'], True],
         ]
     )
     def test_is_ignored(
