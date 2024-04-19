@@ -1,7 +1,7 @@
 # py-wc
 
 ## About
-`wc` stands for word count. `py-wc` is my version of the Linux-style command line tool named `wc`, implemented in Python (hence the 'py' in `py-wc`). As the name implies, its only use is for counting the number of lines, words, bytes, or characters in the files or directories specified in the input arguments. 
+`wc` stands for word count. `py-wc` is my version of the Unix-style command line tool named `wc`, implemented in Python (hence the 'py' in `py-wc`). As the name implies, its only use is for counting the number of lines, words, bytes, or characters in the files or directories specified in the input arguments. 
 
 This version is written in Python. 
 
@@ -18,7 +18,7 @@ So now, when I type `wc` in the command prompt, this batch file will execute, wh
 
 ## Examples
 
-`py-wc` allows you to execute typical Linux-style `wc` commands.
+`py-wc` allows you to execute typical Unix-style `wc` commands.
 
 Here we see the line count for a single file:
 
