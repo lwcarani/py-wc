@@ -13,7 +13,7 @@ from main import (
 )
 
 # initialize data for unittesting
-with open('test.txt', 'r', encoding='utf-8') as f:
+with open("test.txt", "r", encoding="utf-8") as f:
     TEST_TEXT = f.read()
 
 
@@ -22,24 +22,21 @@ class TestPyHead(TestCase):
 
     @parameterized.expand(
         [
-            ['test.txt', ['.csv'], False],
-            ['test.txt', ['.csv', '.xlsx', '.git', '.pdf'], False],
-            ['test.txt', ['.png'], False],
-            ['test.txt', ['.pdf'], False],
-            ['test.txt', ['.xlsx'], False],
-            ['test.txt', ['.git'], False],
-            ['test.txt', ['.txt'], True],
-            ['test.csv', ['.csv'], True],
-            ['test.jpeg', ['.csv', '.xlsx', '.git', '.pdf'], False],
-            ['test.xlsm', ['.csv', '.xlsx', '.git', '.pdf', '.xlsm'], True],
-            ['test.jpeg', ['.csv', '.xlsx', '.git', '.pdf', 'jpeg'], True],
+            ["test.txt", [".csv"], False],
+            ["test.txt", [".csv", ".xlsx", ".git", ".pdf"], False],
+            ["test.txt", [".png"], False],
+            ["test.txt", [".pdf"], False],
+            ["test.txt", [".xlsx"], False],
+            ["test.txt", [".git"], False],
+            ["test.txt", [".txt"], True],
+            ["test.csv", [".csv"], True],
+            ["test.jpeg", [".csv", ".xlsx", ".git", ".pdf"], False],
+            ["test.xlsm", [".csv", ".xlsx", ".git", ".pdf", ".xlsm"], True],
+            ["test.jpeg", [".csv", ".xlsx", ".git", ".pdf", "jpeg"], True],
         ]
     )
     def test_is_ignored(
-        self,
-        file_path: str,
-        ext_or_dir_to_ignore: List[str],
-        expected_output: bool
+        self, file_path: str, ext_or_dir_to_ignore: List[str], expected_output: bool
     ) -> None:
         res = is_ignored(file_path=file_path, ext_or_dir_to_ignore=ext_or_dir_to_ignore)
         self.assertEqual(res, expected_output)
@@ -47,127 +44,124 @@ class TestPyHead(TestCase):
     @parameterized.expand(
         [
             [
-                'test.txt',
+                "test.txt",
                 argparse.Namespace(
-                    input_files_or_dirs=['test.txt'],
+                    input_files_or_dirs=["test.txt"],
                     bytes=False,
                     lines=False,
                     words=False,
-                    characters=False, 
-                    ignore_extensions=[]
+                    characters=False,
+                    ignore_extensions=[],
                 ),
                 0,
-                (7145, 58164, 342185)
+                (7144, 58163, 342185),
             ],
             [
-                'test.txt',
+                "test.txt",
                 argparse.Namespace(
-                    input_files_or_dirs=['test.txt'],
+                    input_files_or_dirs=["test.txt"],
                     bytes=False,
                     lines=True,
                     words=False,
-                    characters=False, 
-                    ignore_extensions=[]
+                    characters=False,
+                    ignore_extensions=[],
                 ),
                 1,
-                (7145, )
+                (7144,),
             ],
             [
-                'test.txt',
+                "test.txt",
                 argparse.Namespace(
-                    input_files_or_dirs=['test.txt'],
+                    input_files_or_dirs=["test.txt"],
                     bytes=False,
                     lines=False,
                     words=True,
-                    characters=False, 
-                    ignore_extensions=[]
+                    characters=False,
+                    ignore_extensions=[],
                 ),
                 1,
-                (58164, )
+                (58163,),
             ],
             [
-                'test.txt',
+                "test.txt",
                 argparse.Namespace(
-                    input_files_or_dirs=['test.txt'],
+                    input_files_or_dirs=["test.txt"],
                     bytes=True,
                     lines=False,
                     words=False,
-                    characters=False, 
-                    ignore_extensions=[]
+                    characters=False,
+                    ignore_extensions=[],
                 ),
                 1,
-                (342185, )
+                (342185,),
             ],
             [
-                'test.txt',
+                "test.txt",
                 argparse.Namespace(
-                    input_files_or_dirs=['test.txt'],
+                    input_files_or_dirs=["test.txt"],
                     bytes=False,
                     lines=False,
                     words=False,
-                    characters=True, 
-                    ignore_extensions=[]
+                    characters=True,
+                    ignore_extensions=[],
                 ),
                 1,
-                (339289, )
+                (339289,),
             ],
             [
-                'test.txt',
+                "test.txt",
                 argparse.Namespace(
-                    input_files_or_dirs=['test.txt'],
+                    input_files_or_dirs=["test.txt"],
                     bytes=True,
                     lines=True,
                     words=True,
-                    characters=True, 
-                    ignore_extensions=[]
+                    characters=True,
+                    ignore_extensions=[],
                 ),
                 4,
-                (7145, 58164, 339289, 342185)
+                (7144, 58163, 339289, 342185),
             ],
             [
-                'test.txt',
+                "test.txt",
                 argparse.Namespace(
-                    input_files_or_dirs=['test.txt'],
+                    input_files_or_dirs=["test.txt"],
                     bytes=True,
                     lines=True,
                     words=False,
-                    characters=False, 
-                    ignore_extensions=[]
+                    characters=False,
+                    ignore_extensions=[],
                 ),
                 2,
-                (7145, 342185)
+                (7144, 342185),
             ],
             [
-                'test.txt',
+                "test.txt",
                 argparse.Namespace(
-                    input_files_or_dirs=['test.txt'],
+                    input_files_or_dirs=["test.txt"],
                     bytes=False,
                     lines=False,
                     words=True,
-                    characters=True, 
-                    ignore_extensions=[]
+                    characters=True,
+                    ignore_extensions=[],
                 ),
                 2,
-                (58164, 339289)
+                (58163, 339289),
             ],
         ]
     )
     def test_count_data(
         self,
-        file_name: str, 
+        file_name: str,
         args: argparse.Namespace,
         optional_flags: int,
-        expected_output: str
+        expected_output: str,
     ) -> None:
-        with open(file_name, 'rb') as file:
+        with open(file_name, "rb") as file:
             res: Tuple[int] = count_data(
-                file=file, 
-                file_name=file_name, 
-                args=args, 
-                optional_flags=optional_flags
+                file=file, file_name=file_name, args=args, optional_flags=optional_flags
             )
             self.assertEqual(res, expected_output)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
